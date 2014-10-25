@@ -19,14 +19,9 @@ class Kirki_Customize_Color_Control extends WP_Customize_Control {
 	 * @var array
 	 */
 	public $statuses;
-
 	public $description = '';
-
 	public $subtitle = '';
-
-	public $separator = false;
-
-	public $required;
+	public $framework_var = '';
 
 	/**
 	 * Constructor.
@@ -39,8 +34,9 @@ class Kirki_Customize_Color_Control extends WP_Customize_Control {
 	 * @param array $args
 	 */
 	public function __construct( $manager, $id, $args = array() ) {
-		$this->statuses = array( '' => __('Default') );
+		$this->statuses = array( '' => __( 'Default', 'kirki' ) );
 		parent::__construct( $manager, $id, $args );
+		$this->framework_var = ( isset( $args['framework_var'] ) && ! is_null( $args['framework_var'] ) ) ? $args['framework_var'] : null;
 	}
 
 	/**
@@ -72,11 +68,17 @@ class Kirki_Customize_Color_Control extends WP_Customize_Control {
 	public function render_content() {
 		$this_default = $this->setting->default;
 		$default_attr = '';
+		$this_id      = $this->id;
+
 		if ( $this_default ) {
 			if ( false === strpos( $this_default, '#' ) )
 				$this_default = '#' . $this_default;
 			$default_attr = ' data-default-color="' . esc_attr( $this_default ) . '"';
 		}
+
+		$setting_attr  = ' data-customize-setting-link="' . esc_attr( $this_id ) . '"';
+		$framework_var = ' data-framework-var="' . $this->framework_var . '"';
+
 		// The input's value gets set by JS. Don't fill it.
 		?>
 		<label>
@@ -90,40 +92,10 @@ class Kirki_Customize_Color_Control extends WP_Customize_Control {
 				<div class="customizer-subtitle"><?php echo $this->subtitle; ?></div>
 			<?php endif; ?>
 			<div class="customize-control-content">
-				<input class="color-picker-hex" type="text" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value' ); ?>"<?php echo $default_attr; ?> />
+				<input class="color-picker-hex kirki-color-picker" type="text" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value' ); ?>"<?php echo $default_attr; ?> <?php echo $setting_attr; ?> <?php echo $framework_var; ?>/>
 			</div>
 		</label>
-		<?php if ( $this->separator ) echo '<hr class="customizer-separator">'; ?>
-		<?php foreach ( $this->required as $id => $value ) :
+		<?php
 
-			if ( isset($id) && isset($value) && get_theme_mod($id,0)==$value ) { ?>
-				<script>
-				jQuery(document).ready(function($) {
-					$( "#customize-control-<?php echo $this->id; ?>" ).show();
-					$( "#<?php echo $id . get_theme_mod($id,0); ?>" ).click(function(){
-						$( "#customize-control-<?php echo $this->id; ?>" ).fadeOut(300);
-					});
-					$( "#<?php echo $id . $value; ?>" ).click(function(){
-						$( "#customize-control-<?php echo $this->id; ?>" ).fadeIn(300);
-					});
-				});
-				</script>
-			<?php }
-
-			if ( isset($id) && isset($value) && get_theme_mod($id,0)!=$value ) { ?>
-				<script>
-				jQuery(document).ready(function($) {
-					$( "#customize-control-<?php echo $this->id; ?>" ).hide();
-					$( "#<?php echo $id . get_theme_mod($id,0); ?>" ).click(function(){
-						$( "#customize-control-<?php echo $this->id; ?>" ).fadeOut(300);
-					});
-					$( "#<?php echo $id . $value; ?>" ).click(function(){
-						$( "#customize-control-<?php echo $this->id; ?>" ).fadeIn(300);
-					});
-				});
-				</script>
-			<?php }
-
-		endforeach;
 	}
 }

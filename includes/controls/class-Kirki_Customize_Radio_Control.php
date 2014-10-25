@@ -3,16 +3,9 @@
 class Kirki_Customize_Radio_Control extends WP_Customize_Control {
 
 	public $type = 'radio';
-
 	public $description = '';
-
 	public $mode = 'radio';
-
 	public $subtitle = '';
-
-	public $separator = false;
-
-	public $required;
 
 	public function enqueue() {
 
@@ -74,7 +67,7 @@ class Kirki_Customize_Radio_Control extends WP_Customize_Control {
 				foreach ( $this->choices as $value => $label ) :
 					?>
 					<label class="customizer-radio">
-						<input type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?> />
+						<input class="kirki-radio" type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?> />
 						<?php echo esc_html( $label ); ?><br/>
 					</label>
 					<?php
@@ -83,45 +76,13 @@ class Kirki_Customize_Radio_Control extends WP_Customize_Control {
 			}
 			?>
 		</div>
-		<?php if ( $this->separator ) echo '<hr class="customizer-separator">'; ?>
 		<?php if ( 'buttonset' == $this->mode || 'image' == $this->mode ) { ?>
 			<script>
 			jQuery(document).ready(function($) {
-				$( "#input_<?php echo $this->id; ?>" ).buttonset();
+				$( '[id="input_<?php echo $this->id; ?>"]' ).buttonset();
 			});
 			</script>
-		<?php } ?>
+		<?php }
 
-		<?php foreach ( $this->required as $id => $value ) :
-
-			if ( isset($id) && isset($value) && get_theme_mod($id,0)==$value ) { ?>
-				<script>
-				jQuery(document).ready(function($) {
-					$( "#customize-control-<?php echo $this->id; ?>" ).show();
-					$( "#<?php echo $id . get_theme_mod($id,0); ?>" ).click(function(){
-						$( "#customize-control-<?php echo $this->id; ?>" ).fadeOut(300);
-					});
-					$( "#<?php echo $id . $value; ?>" ).click(function(){
-						$( "#customize-control-<?php echo $this->id; ?>" ).fadeIn(300);
-					});
-				});
-				</script>
-			<?php }
-
-			if ( isset($id) && isset($value) && get_theme_mod($id,0)!=$value ) { ?>
-				<script>
-				jQuery(document).ready(function($) {
-					$( "#customize-control-<?php echo $this->id; ?>" ).hide();
-					$( "#<?php echo $id . get_theme_mod($id,0); ?>" ).click(function(){
-						$( "#customize-control-<?php echo $this->id; ?>" ).fadeOut(300);
-					});
-					$( "#<?php echo $id . $value; ?>" ).click(function(){
-						$( "#customize-control-<?php echo $this->id; ?>" ).fadeIn(300);
-					});
-				});
-				</script>
-			<?php }
-
-		endforeach;
 	}
 }
