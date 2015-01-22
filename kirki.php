@@ -5,15 +5,15 @@ Plugin URI:    http://kirki.org
 Description:   An options framework using and extending the WordPress Customizer
 Author:        Aristeides Stathopoulos
 Author URI:    http://press.codes
-Version:       0.5
+Version:       0.5.1
 */
 
 // Load Kirki_Fonts before everything else
 include_once( dirname( __FILE__ ) . '/includes/class-Kirki_Fonts.php' );
 
 /**
- * The main Kirki class
- */
+* The main Kirki class
+*/
 if ( ! class_exists( 'Kirki' ) ) :
 class Kirki {
 
