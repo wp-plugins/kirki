@@ -5,17 +5,19 @@ Plugin URI:    http://kirki.org
 Description:   An options framework using and extending the WordPress Customizer
 Author:        Aristeides Stathopoulos
 Author URI:    http://press.codes
-Version:       0.5.1
+Version:       0.6.0
 */
 
 // Load Kirki_Fonts before everything else
-include_once( dirname( __FILE__ ) . '/includes/class-Kirki_Fonts.php' );
+include_once( dirname( __FILE__ ) . '/includes/class-kirki-fonts.php' );
 
 /**
-* The main Kirki class
-*/
+ * The main Kirki class
+ */
 if ( ! class_exists( 'Kirki' ) ) :
 class Kirki {
+	public $scripts;
+	public $styles;
 
 	function __construct() {
 
@@ -29,21 +31,18 @@ class Kirki {
 		$options = $this->get_config();
 
 		include_once( dirname( __FILE__ ) . '/includes/required.php' );
-		include_once( dirname( __FILE__ ) . '/includes/class-Kirki_Scripts.php' );
-		include_once( dirname( __FILE__ ) . '/includes/class-Kirki_Style_Background.php' );
-		include_once( dirname( __FILE__ ) . '/includes/class-Kirki_Style_Color.php' );
-		include_once( dirname( __FILE__ ) . '/includes/class-Kirki_Style_Fonts.php' );
-		include_once( dirname( __FILE__ ) . '/includes/class-Kirki_Style_Generic.php' );
-		include_once( dirname( __FILE__ ) . '/includes/class-Kirki_Color.php' );
-		include_once( dirname( __FILE__ ) . '/includes/class-Kirki_Settings.php' );
-		include_once( dirname( __FILE__ ) . '/includes/class-Kirki_Controls.php' );
+		include_once( dirname( __FILE__ ) . '/includes/class-kirki-style.php' );
+		include_once( dirname( __FILE__ ) . '/includes/class-kirki-scripts.php' );
+		include_once( dirname( __FILE__ ) . '/includes/class-kirki-style-background.php' );
+		include_once( dirname( __FILE__ ) . '/includes/class-kirki-style-color.php' );
+		include_once( dirname( __FILE__ ) . '/includes/class-kirki-style-fonts.php' );
+		include_once( dirname( __FILE__ ) . '/includes/class-kirki-color.php' );
+		include_once( dirname( __FILE__ ) . '/includes/class-kirki-settings.php' );
+		include_once( dirname( __FILE__ ) . '/includes/class-kirki-controls.php' );
 		include_once( dirname( __FILE__ ) . '/includes/deprecated.php' );
 
-		$scripts      = new Kirki_Scripts();
-		$styles_bg    = new Kirki_Style_Background();
-		$styles_color = new Kirki_Style_Color();
-		$styles_fonts = new Kirki_Style_Fonts();
-		$styles_gen   = new Kirki_Style_Generic();
+		$this->scripts = new Kirki_Scripts();
+		$this->styles  = new Kirki_Style();
 
 		add_action( 'customize_register', array( $this, 'include_customizer_controls' ), 1 );
 		add_action( 'customize_register', array( $this, 'customizer_builder' ), 99 );
@@ -55,18 +54,24 @@ class Kirki {
 	 */
 	function include_customizer_controls() {
 
-		include_once( dirname( __FILE__ ) . '/includes/controls/class-Kirki_Customize_Checkbox_Control.php' );
-		include_once( dirname( __FILE__ ) . '/includes/controls/class-Kirki_Customize_Color_Control.php' );
-		include_once( dirname( __FILE__ ) . '/includes/controls/class-Kirki_Customize_Image_Control.php' );
-		include_once( dirname( __FILE__ ) . '/includes/controls/class-Kirki_Customize_Multicheck_Control.php' );
-		include_once( dirname( __FILE__ ) . '/includes/controls/class-Kirki_Customize_Number_Control.php' );
-		include_once( dirname( __FILE__ ) . '/includes/controls/class-Kirki_Customize_Radio_Control.php' );
-		include_once( dirname( __FILE__ ) . '/includes/controls/class-Kirki_Customize_Sliderui_Control.php' );
-		include_once( dirname( __FILE__ ) . '/includes/controls/class-Kirki_Customize_Text_Control.php' );
-		include_once( dirname( __FILE__ ) . '/includes/controls/class-Kirki_Customize_Textarea_Control.php' );
-		include_once( dirname( __FILE__ ) . '/includes/controls/class-Kirki_Customize_Upload_Control.php' );
-		include_once( dirname( __FILE__ ) . '/includes/controls/class-Kirki_Select_Control.php' );
-		include_once( dirname( __FILE__ ) . '/includes/controls/class-Kirki_Customize_Group_Title_Control.php' );
+		include_once( dirname( __FILE__ ) . '/includes/class-kirki-customize-control.php' );
+
+		$controls = $this->get_controls();
+		foreach ( $controls as $control ) {
+			if ( 'background' != $control['type'] ) {
+				if ( 'group_title' == $control['type'] ) {
+					include_once( KIRKI_PATH . '/includes/controls/class-kirki-customize-group-title-control.php' );
+				} else {
+					include_once( KIRKI_PATH . '/includes/controls/class-kirki-customize-' . $control['type'] . '-control.php' );
+				}
+			} else {
+				include_once( KIRKI_PATH . '/includes/controls/class-kirki-customize-color-control.php' );
+				include_once( KIRKI_PATH . '/includes/controls/class-kirki-customize-image-control.php' );
+				include_once( KIRKI_PATH . '/includes/controls/class-kirki-customize-select-control.php' );
+				include_once( KIRKI_PATH . '/includes/controls/class-kirki-customize-radio-control.php' );
+				include_once( KIRKI_PATH . '/includes/controls/class-kirki-customize-slider-control.php' );
+			}
+		}
 
 	}
 
