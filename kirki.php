@@ -5,7 +5,7 @@ Plugin URI:    http://kirki.org
 Description:   An options framework using and extending the WordPress Customizer
 Author:        Aristeides Stathopoulos
 Author URI:    http://press.codes
-Version:       0.6.1
+Version:       0.6.2
 */
 
 // Load Kirki_Fonts before everything else
@@ -33,9 +33,7 @@ class Kirki {
 		include_once( dirname( __FILE__ ) . '/includes/required.php' );
 		include_once( dirname( __FILE__ ) . '/includes/class-kirki-style.php' );
 		include_once( dirname( __FILE__ ) . '/includes/class-kirki-scripts.php' );
-		include_once( dirname( __FILE__ ) . '/includes/class-kirki-style-background.php' );
-		include_once( dirname( __FILE__ ) . '/includes/class-kirki-style-color.php' );
-		include_once( dirname( __FILE__ ) . '/includes/class-kirki-style-fonts.php' );
+		include_once( dirname( __FILE__ ) . '/includes/class-kirki-fonts-script.php' );
 		include_once( dirname( __FILE__ ) . '/includes/class-kirki-color.php' );
 		include_once( dirname( __FILE__ ) . '/includes/class-kirki-settings.php' );
 		include_once( dirname( __FILE__ ) . '/includes/class-kirki-controls.php' );
@@ -46,6 +44,7 @@ class Kirki {
 
 		add_action( 'customize_register', array( $this, 'include_customizer_controls' ), 1 );
 		add_action( 'customize_register', array( $this, 'customizer_builder' ), 99 );
+		add_action( 'wp', array( $this, 'update' ) );
 
 	}
 
@@ -117,6 +116,30 @@ class Kirki {
 
 		$controls = apply_filters( 'kirki/controls', array() );
 		return $controls;
+
+	}
+
+	function update() {
+
+		// < 0.6.1 -> 0.6.2
+		if ( ! get_option( 'kirki_version' ) ) {
+
+			$control_ids = array();
+			$controls = $this->get_controls();
+			foreach ( $controls as $control ) {
+				if ( 'background' != $control['type'] ) {
+					$control_ids[] = $control['setting'];
+				}
+			}
+			foreach ( $control_ids as $control_id ) {
+				if ( get_theme_mod( $control_id . '_opacity' ) && ! get_theme_mod( $control_id ) ) {
+					update_theme_mod( $control_id, get_theme_mod( $control_id . '_opacity' ) );
+				}
+			}
+
+			update_option( 'kirki_version', '0.6.2' );
+
+		}
 
 	}
 
