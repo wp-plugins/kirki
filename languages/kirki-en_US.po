@@ -1,0 +1,183 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Kirki Framework\n"
+"POT-Creation-Date: 2015-03-30 22:16+0200\n"
+"PO-Revision-Date: 2015-03-30 22:17+0200\n"
+"Last-Translator: Stathopoulos Aristeides <info@aristeides.com>\n"
+"Language-Team: Stathopoulos Aristeides <info@aristeides.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/Config.php:88
+msgid "Background Color"
+msgstr "Background Color"
+
+#: includes/Config.php:89
+msgid "Background Image"
+msgstr "Background Image"
+
+#: includes/Config.php:90
+msgid "No Repeat"
+msgstr "No Repeat"
+
+#: includes/Config.php:91
+msgid "Repeat All"
+msgstr "Repeat All"
+
+#: includes/Config.php:92
+msgid "Repeat Horizontally"
+msgstr "Repeat Horizontally"
+
+#: includes/Config.php:93
+msgid "Repeat Vertically"
+msgstr "Repeat Vertically"
+
+#: includes/Config.php:94
+msgid "Inherit"
+msgstr "Inherit"
+
+#: includes/Config.php:95
+msgid "Background Repeat"
+msgstr "Background Repeat"
+
+#: includes/Config.php:96
+msgid "Cover"
+msgstr "Cover"
+
+#: includes/Config.php:97
+msgid "Contain"
+msgstr "Contain"
+
+#: includes/Config.php:98
+msgid "Background Size"
+msgstr "Background Size"
+
+#: includes/Config.php:99
+msgid "Fixed"
+msgstr "Fixed"
+
+#: includes/Config.php:100
+msgid "Scroll"
+msgstr "Scroll"
+
+#: includes/Config.php:101
+msgid "Background Attachment"
+msgstr "Background Attachment"
+
+#: includes/Config.php:102
+msgid "Left Top"
+msgstr "Left Top"
+
+#: includes/Config.php:103
+msgid "Left Center"
+msgstr "Left Center"
+
+#: includes/Config.php:104
+msgid "Left Bottom"
+msgstr "Left Bottom"
+
+#: includes/Config.php:105
+msgid "Right Top"
+msgstr "Right Top"
+
+#: includes/Config.php:106
+msgid "Right Center"
+msgstr "Right Center"
+
+#: includes/Config.php:107
+msgid "Right Bottom"
+msgstr "Right Bottom"
+
+#: includes/Config.php:108
+msgid "Center Top"
+msgstr "Center Top"
+
+#: includes/Config.php:109
+msgid "Center Center"
+msgstr "Center Center"
+
+#: includes/Config.php:110
+msgid "Center Bottom"
+msgstr "Center Bottom"
+
+#: includes/Config.php:111
+msgid "Background Position"
+msgstr "Background Position"
+
+#: includes/Config.php:112
+msgid "Background Opacity"
+msgstr "Background Opacity"
+
+#: includes/Config.php:113
+msgid "ON"
+msgstr "ON"
+
+#: includes/Config.php:114
+msgid "OFF"
+msgstr "OFF"
+
+#: includes/Config.php:115
+msgid "All"
+msgstr "All"
+
+#: includes/Config.php:116
+msgid "Cyrillic"
+msgstr "Cyrillic"
+
+#: includes/Config.php:117
+msgid "Cyrillic Extended"
+msgstr "Cyrillic Extended"
+
+#: includes/Config.php:118
+msgid "Devanagari"
+msgstr "Devanagari"
+
+#: includes/Config.php:119
+msgid "Greek"
+msgstr "Greek"
+
+#: includes/Config.php:120
+msgid "Greek Extended"
+msgstr "Greek Extended"
+
+#: includes/Config.php:121
+msgid "Khmer"
+msgstr "Khmer"
+
+#: includes/Config.php:122
+msgid "Latin"
+msgstr "Latin"
+
+#: includes/Config.php:123
+msgid "Latin Extended"
+msgstr "Latin Extended"
+
+#: includes/Config.php:124
+msgid "Vietnamese"
+msgstr "Vietnamese"
+
+#: includes/Config.php:125
+msgctxt "font style"
+msgid "Serif"
+msgstr "Serif"
+
+#: includes/Config.php:126
+msgctxt "font style"
+msgid "Sans Serif"
+msgstr "Sans Serif"
+
+#: includes/Config.php:127
+msgctxt "font style"
+msgid "Monospace"
+msgstr "Monospace"
