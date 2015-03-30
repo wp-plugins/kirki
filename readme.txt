@@ -55,17 +55,17 @@ For configuration instructions please visit http://kirki.org/#configuration
 
 == Changelog ==
 
-== 0.8.2 ==
+= 0.8.2 =
 
 * Fix: Autoloader could not properly include files due to strtolower()
 
-== 0.8.1 ==
+= 0.8.1 =
 
 March 30, 2014, dev time: 30 minutes
 
 * Fix: Translation strings now overridable using the config filter.
 
-== 0.8.0 ==
+= 0.8.0 =
 
 March 30, 2014, dev time: 32 hours
 
@@ -86,7 +86,7 @@ March 30, 2014, dev time: 32 hours
 * Tweak: Deprecating the group_title control in favor of the new custom control
 * Tweak: Changed the CSS for checkboxes
 
-== 0.7.1 ==
+= 0.7.1 =
 
 March 15, 2014, dev time: 2 hours
 
@@ -95,7 +95,7 @@ March 15, 2014, dev time: 2 hours
 * Tweak: `logo_image` now injects an `img` element instead of a `div` with custom background
 * New: Added `description` argument in the kirki configuration (replaces the theme description)
 
-== 0.7 ==
+= 0.7 =
 
 March 14, 2014, dev time: 10 hours
 
@@ -117,7 +117,7 @@ March 14, 2014, dev time: 10 hours
 * Tweak: Using WordPress core controls instead of custom ones when those are available
 * Tweak: Separate logic for multiple-type controls that were using the "mode" argument. This has been deprecated in favor of completely separate control types.
 
-== 0.6.2 ==
+= 0.6.2 =
 
 March 2, 2014, dev time: 3 hours
 
@@ -128,14 +128,14 @@ March 2, 2014, dev time: 3 hours
 * Fix: Required script
 * Fix: \'_opacity\' was added to a lot of controls by mistake. Removed it and wrote a migration script.
 
-== 0.6.1 ==
+= 0.6.1 =
 
 2014-02-25, dev time: 1 hours
 
 * Fix: Sortables controls had a JS conflict
 * Fix: Switches & Toggles were not properly working
 
-== 0.6.0 ==
+= 0.6.0 =
 
 2014-02-25, dev time: 9 hours
 
@@ -152,12 +152,12 @@ March 2, 2014, dev time: 3 hours
 * Fix: Double output CSS (props @agusmu)
 * New: Google fonts now parsed from a json file.
 
-== 0.5.1 ==
+= 0.5.1 =
 
 * Fix: Transport defaults to refresh instead of postMessage
 * Fix: undefined index notice.
 
-== 0.5 ==
+= 0.5 =
 
 * New: Automatic output of styles for generic controls.
 * New: Automatic output of styles + scripts for fonts (including googlefonts )
