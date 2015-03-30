@@ -25,7 +25,7 @@ class Kirki {
     public static $instance = null;
 
     /** @var string Version number */
-    public static $version = '0.8.0';
+    public static $version = '0.8.1';
 
     /** @var Config Configuration */
 	public $config = null;
@@ -59,6 +59,15 @@ class Kirki {
     public static function config() {
         return self::get_instance()->config;
     }
+
+	/**
+	 * Shortcut method to get the translation strings
+	 */
+	public static function i18n() {
+		$config  = self::config();
+		$options = $config->get_all();
+		return $options['i18n'];
+	}
 
     /**
      * Shortcut method to get the controls of the single instance.
