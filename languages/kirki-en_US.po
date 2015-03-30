@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kirki Framework\n"
-"POT-Creation-Date: 2015-03-30 01:57+0200\n"
-"PO-Revision-Date: 2015-03-30 01:57+0200\n"
+"POT-Creation-Date: 2015-03-30 22:16+0200\n"
+"PO-Revision-Date: 2015-03-30 22:17+0200\n"
 "Last-Translator: Stathopoulos Aristeides <info@aristeides.com>\n"
 "Language-Team: Stathopoulos Aristeides <info@aristeides.com>\n"
 "Language: en_US\n"
@@ -19,167 +19,165 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: includes/Control.php:179
+#: includes/Config.php:88
 msgid "Background Color"
 msgstr "Background Color"
 
-#: includes/Control.php:192
+#: includes/Config.php:89
 msgid "Background Image"
 msgstr "Background Image"
 
-#: includes/Control.php:206 includes/Helpers/sanitize.php:45
+#: includes/Config.php:90
 msgid "No Repeat"
 msgstr "No Repeat"
 
-#: includes/Control.php:207 includes/Helpers/sanitize.php:46
+#: includes/Config.php:91
 msgid "Repeat All"
 msgstr "Repeat All"
 
-#: includes/Control.php:208 includes/Helpers/sanitize.php:47
+#: includes/Config.php:92
 msgid "Repeat Horizontally"
 msgstr "Repeat Horizontally"
 
-#: includes/Control.php:209 includes/Helpers/sanitize.php:48
+#: includes/Config.php:93
 msgid "Repeat Vertically"
 msgstr "Repeat Vertically"
 
-#: includes/Control.php:210 includes/Control.php:227
-#: includes/Control.php:247 includes/Helpers/sanitize.php:49
-#: includes/Helpers/sanitize.php:63 includes/Helpers/sanitize.php:79
+#: includes/Config.php:94
 msgid "Inherit"
 msgstr "Inherit"
 
-#: includes/Control.php:213
+#: includes/Config.php:95
 msgid "Background Repeat"
 msgstr "Background Repeat"
 
-#: includes/Control.php:228 includes/Helpers/sanitize.php:64
+#: includes/Config.php:96
 msgid "Cover"
 msgstr "Cover"
 
-#: includes/Control.php:229 includes/Helpers/sanitize.php:65
+#: includes/Config.php:97
 msgid "Contain"
 msgstr "Contain"
 
-#: includes/Control.php:233
+#: includes/Config.php:98
 msgid "Background Size"
 msgstr "Background Size"
 
-#: includes/Control.php:248 includes/Helpers/sanitize.php:80
+#: includes/Config.php:99
 msgid "Fixed"
 msgstr "Fixed"
 
-#: includes/Control.php:249 includes/Helpers/sanitize.php:81
+#: includes/Config.php:100
 msgid "Scroll"
 msgstr "Scroll"
 
-#: includes/Control.php:253
+#: includes/Config.php:101
 msgid "Background Attachment"
 msgstr "Background Attachment"
 
-#: includes/Control.php:267 includes/Helpers/sanitize.php:95
+#: includes/Config.php:102
 msgid "Left Top"
 msgstr "Left Top"
 
-#: includes/Control.php:268 includes/Helpers/sanitize.php:96
+#: includes/Config.php:103
 msgid "Left Center"
 msgstr "Left Center"
 
-#: includes/Control.php:269 includes/Helpers/sanitize.php:97
+#: includes/Config.php:104
 msgid "Left Bottom"
 msgstr "Left Bottom"
 
-#: includes/Control.php:270 includes/Helpers/sanitize.php:98
+#: includes/Config.php:105
 msgid "Right Top"
 msgstr "Right Top"
 
-#: includes/Control.php:271 includes/Helpers/sanitize.php:99
+#: includes/Config.php:106
 msgid "Right Center"
 msgstr "Right Center"
 
-#: includes/Control.php:272 includes/Helpers/sanitize.php:100
+#: includes/Config.php:107
 msgid "Right Bottom"
 msgstr "Right Bottom"
 
-#: includes/Control.php:273 includes/Helpers/sanitize.php:101
+#: includes/Config.php:108
 msgid "Center Top"
 msgstr "Center Top"
 
-#: includes/Control.php:274 includes/Helpers/sanitize.php:102
+#: includes/Config.php:109
 msgid "Center Center"
 msgstr "Center Center"
 
-#: includes/Control.php:275 includes/Helpers/sanitize.php:103
+#: includes/Config.php:110
 msgid "Center Bottom"
 msgstr "Center Bottom"
 
-#: includes/Control.php:278
+#: includes/Config.php:111
 msgid "Background Position"
 msgstr "Background Position"
 
-#: includes/Control.php:296
+#: includes/Config.php:112
 msgid "Background Opacity"
 msgstr "Background Opacity"
 
-#: includes/Controls/SwitchControl.php:26
+#: includes/Config.php:113
 msgid "ON"
 msgstr "ON"
 
-#: includes/Controls/SwitchControl.php:27
+#: includes/Config.php:114
 msgid "OFF"
 msgstr "OFF"
 
-#: includes/Fonts/FontRegistry.php:125
+#: includes/Config.php:115
 msgid "All"
 msgstr "All"
 
-#: includes/Fonts/FontRegistry.php:126
+#: includes/Config.php:116
 msgid "Cyrillic"
 msgstr "Cyrillic"
 
-#: includes/Fonts/FontRegistry.php:127
+#: includes/Config.php:117
 msgid "Cyrillic Extended"
 msgstr "Cyrillic Extended"
 
-#: includes/Fonts/FontRegistry.php:128
+#: includes/Config.php:118
 msgid "Devanagari"
 msgstr "Devanagari"
 
-#: includes/Fonts/FontRegistry.php:129
+#: includes/Config.php:119
 msgid "Greek"
 msgstr "Greek"
 
-#: includes/Fonts/FontRegistry.php:130
+#: includes/Config.php:120
 msgid "Greek Extended"
 msgstr "Greek Extended"
 
-#: includes/Fonts/FontRegistry.php:131
+#: includes/Config.php:121
 msgid "Khmer"
 msgstr "Khmer"
 
-#: includes/Fonts/FontRegistry.php:132
+#: includes/Config.php:122
 msgid "Latin"
 msgstr "Latin"
 
-#: includes/Fonts/FontRegistry.php:133
+#: includes/Config.php:123
 msgid "Latin Extended"
 msgstr "Latin Extended"
 
-#: includes/Fonts/FontRegistry.php:134
+#: includes/Config.php:124
 msgid "Vietnamese"
 msgstr "Vietnamese"
 
-#: includes/Fonts/FontRegistry.php:187
+#: includes/Config.php:125
 msgctxt "font style"
 msgid "Serif"
 msgstr "Serif"
 
-#: includes/Fonts/FontRegistry.php:191
+#: includes/Config.php:126
 msgctxt "font style"
 msgid "Sans Serif"
 msgstr "Sans Serif"
 
-#: includes/Fonts/FontRegistry.php:195
+#: includes/Config.php:127
 msgctxt "font style"
-msgid "Monospaced"
-msgstr "Monospaced"
+msgid "Monospace"
+msgstr "Monospace"
