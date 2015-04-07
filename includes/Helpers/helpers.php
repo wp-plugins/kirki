@@ -52,7 +52,7 @@ function kirki_update() {
 	}
 
 }
-add_action( 'wp', 'kirki_update' );
+// add_action( 'wp', 'kirki_update' );
 
 /**
  * Get the value of a field.
